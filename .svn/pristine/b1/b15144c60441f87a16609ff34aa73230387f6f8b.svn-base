@@ -1,0 +1,43 @@
+module keypad(valid, number, a, b, c, d, e, f, g);
+   output 	valid;
+   output [3:0] number;
+   input 	a, b, c, d, e, f, g;
+	wire w1,w2,w3,w4,w5,w6,w7,w8,w9,w10,w11,w12,w13,w14,w15,w16,w17,w18,w19,w20;
+	//
+	//valid or not
+	//(a+b+c)(d+e+f)+bg
+	//
+	or o1(w1,a,c);
+	or o15(w19,b,w1);
+	or o2(w2,d,e);
+	or o3(w3,w2,f);
+	and a1(w4,w19,w3);
+	and a10(w20,b,g);
+	or o4 (valid,w20,w4);
+	//
+	//number
+	//
+	//xxx1
+	or o5(w5,a,c);
+	or o6(w6,d,f);
+	and a2(w7,w5,w6);
+	and a3(w8,b,e);
+	or o7(number[0],w7,w8);
+	//xx1x
+	or o8(w9,d,e);
+	and a4(w10,w9,c);
+	and a5(w11,b,d);
+	and a6(w12,a,f);
+	or o9 (w13, w10,w11);
+	or o10 (number[1],w13,w12);
+	//x1xx
+	or o11(w14,e,f);
+	or o12(w15,b,c);
+	and a7(w16,w14,a);
+	and a8(w17,w15,e);
+	or o13(number[2],w16,w17);
+	//1xxx
+	or o14(w18,b,c);
+	and a9(number[3],w18,f);
+	
+endmodule // keypad

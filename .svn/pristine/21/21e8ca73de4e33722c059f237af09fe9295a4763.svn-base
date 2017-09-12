@@ -1,0 +1,44 @@
+.text
+
+## void
+## pick_best_k_baskets(int k, Baskets *baskets) {
+##     if (baskets == NULL) {
+##         return;
+##     }
+##     for (int i = 0; i < k; i++) {
+##         for (int j = baskets->num_found - 1; j > i; j--) {
+##             if (get_num_carrots(baskets->basket[j - 1]) <
+##                 get_num_carrots(baskets->basket[j])) {
+##                 // Swaps values stored at j-1 and j in place.
+##                 // The address stored in basket array is 32 bits
+##                 // (i.e. You do NOT need to do any casting in MIPS.)
+##                 baskets->basket[j] = (Node *)((int)baskets->basket[j] ^
+##                                               (int)baskets->basket[j - 1]);
+##                 baskets->basket[j - 1] = (Node *)((int)baskets->basket[j] ^
+##                                                   (int)baskets->basket[j - 1]);
+##                 baskets->basket[j] = (Node *)((int)baskets->basket[j] ^
+##                                               (int)baskets->basket[j - 1]);
+##             }
+##         }
+##     }
+## }
+## 
+## struct Node {
+##     char seen;
+##     int basket;
+##     int dirt;
+##     int id_size;
+##     int *identity;
+##     int num_children;
+##     Node *children[4];
+## };
+## 
+## struct Baskets {
+##     int num_found;
+##     Node *basket[10];
+## };
+
+.globl pick_best_k_baskets
+pick_best_k_baskets:
+	# Your code goes here :)
+	jr  $ra

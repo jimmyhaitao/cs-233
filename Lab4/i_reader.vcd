@@ -1,0 +1,281 @@
+$date
+	Wed Feb  8 19:29:35 2017
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module i_reader_test $end
+$var wire 1 ! I $end
+$var reg 3 " bits [2:0] $end
+$var reg 1 # clk $end
+$var reg 1 $ restart $end
+$scope module ir $end
+$var wire 1 ! I $end
+$var wire 3 % bits [2:0] $end
+$var wire 1 & clk $end
+$var wire 1 ' in000 $end
+$var wire 1 ( in111 $end
+$var wire 1 ) restart $end
+$var wire 1 * sBlank $end
+$var wire 1 + sBlank_next $end
+$var wire 1 , sGarbage $end
+$var wire 1 - sGarbage_next $end
+$var wire 1 . sI $end
+$var wire 1 / sI_end $end
+$var wire 1 0 sI_end_next $end
+$var wire 1 1 sI_next $end
+$scope module fsGarbage $end
+$var wire 1 & clk $end
+$var wire 1 - d $end
+$var wire 1 2 enable $end
+$var wire 1 3 reset $end
+$var reg 1 4 q $end
+$upscope $end
+$scope module fsBlank $end
+$var wire 1 & clk $end
+$var wire 1 + d $end
+$var wire 1 5 enable $end
+$var wire 1 6 reset $end
+$var reg 1 7 q $end
+$upscope $end
+$scope module fsI $end
+$var wire 1 & clk $end
+$var wire 1 1 d $end
+$var wire 1 8 enable $end
+$var wire 1 9 reset $end
+$var reg 1 : q $end
+$upscope $end
+$scope module fsI_end $end
+$var wire 1 & clk $end
+$var wire 1 0 d $end
+$var wire 1 ; enable $end
+$var wire 1 < reset $end
+$var reg 1 = q $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x=
+0<
+1;
+x:
+09
+18
+x7
+06
+15
+x4
+03
+12
+01
+00
+x/
+x.
+1-
+x,
+0+
+x*
+1)
+0(
+1'
+0&
+b0 %
+1$
+0#
+b0 "
+x!
+$end
+#5
+14
+1,
+07
+0*
+0:
+0.
+0=
+0/
+0!
+1#
+1&
+#10
+0#
+0&
+#12
+0-
+1+
+0$
+0)
+#15
+1+
+17
+1*
+04
+0,
+1#
+1&
+#20
+0#
+0&
+#25
+1#
+1&
+#30
+0#
+0&
+#32
+0+
+11
+b111 "
+b111 %
+0'
+1(
+#35
+1-
+01
+1:
+1.
+07
+0*
+1#
+1&
+#40
+0#
+0&
+#42
+0-
+10
+b0 "
+b0 %
+1'
+0(
+#45
+1+
+00
+0:
+0.
+1=
+1/
+1!
+1#
+1&
+#50
+0#
+0&
+#52
+0+
+11
+b111 "
+b111 %
+0'
+1(
+#55
+01
+1-
+0=
+0/
+0!
+1:
+1.
+1#
+1&
+#60
+0#
+0&
+#62
+0-
+10
+b0 "
+b0 %
+1'
+0(
+#65
+1+
+00
+0:
+0.
+1=
+1/
+1!
+1#
+1&
+#70
+0#
+0&
+#72
+1-
+0+
+b11 "
+b11 %
+0'
+#75
+0=
+0/
+0!
+14
+1,
+1#
+1&
+#80
+0#
+0&
+#82
+0-
+1+
+b0 "
+b0 %
+1'
+#85
+04
+0,
+17
+1*
+1#
+1&
+#90
+0#
+0&
+#95
+1#
+1&
+#100
+0#
+0&
+#102
+0+
+11
+b111 "
+b111 %
+0'
+1(
+#105
+01
+1-
+07
+0*
+1:
+1.
+1#
+1&
+#110
+0#
+0&
+#112
+b11 "
+b11 %
+0(
+#115
+0:
+0.
+14
+1,
+1#
+1&
+#120
+0#
+0&
+#122

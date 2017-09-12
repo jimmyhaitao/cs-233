@@ -1,0 +1,106 @@
+.text
+
+## void
+## pick_best_k_baskets(int k, Baskets *baskets) {
+##     if (baskets == NULL) {
+##         return;
+##     }
+##     for (int i = 0; i < k; i++) {
+##         for (int j = baskets->num_found - 1; j > i; j--) {
+##             if (get_num_carrots(baskets->basket[j - 1]) <
+##                 get_num_carrots(baskets->basket[j])) {
+##                 // Swaps values stored at j-1 and j in place.
+##                 // The address stored in basket array is 32 bits
+##                 // (i.e. You do NOT need to do any casting in MIPS.)
+##                 baskets->basket[j] = (Node *)((int)baskets->basket[j] ^
+##                                               (int)baskets->basket[j - 1]);
+##                 baskets->basket[j - 1] = (Node *)((int)baskets->basket[j] ^
+##                                                   (int)baskets->basket[j - 1]);
+##                 baskets->basket[j] = (Node *)((int)baskets->basket[j] ^
+##                                               (int)baskets->basket[j - 1]);
+##             }
+##         }
+##     }
+## }
+## 
+## struct Node {
+##     char seen;	4
+##     int basket;	4	
+##     int dirt;	4
+##     int id_size;	4
+##     int *identity;	4
+##     int num_children;4
+##     Node *children[4];4*4
+## };
+## 
+## struct Baskets {
+##     int num_found;	4
+##     Node *basket[10];4*10
+## };
+
+.globl pick_best_k_baskets
+pick_best_k_baskets:
+	# Your code goes here :)
+	sub	$sp, $sp, 32 		
+	sw	$ra, 0($sp)
+	sw	$s0, 4($sp)
+	sw	$s1, 8($sp)
+	sw	$s2, 12($sp)
+	sw	$s3, 16($sp)
+	sw	$s4, 20($sp)
+	sw	$s5, 24($sp)
+	sw	$s6, 28($sp)
+	
+	move	$s0, $a0		#s0:k	
+	move	$s1, $a1		#s1:baskets
+	bne	$s1, $0, pick_best_k_baskets_notnull
+	j	pick_best_k_baskets_end
+	
+pick_best_k_baskets_notnull:
+	li	$s2, 0			#s2:i=0
+pick_best_k_baskets_forloop1:
+	bge	$s2, $s0, pick_best_k_baskets_end
+	lw	$s3, 0($s1)		#s3:j=baskets->num_found
+	sub	$s3, $s3, 1		#s3:j=baskets->num_found-1
+pick_best_k_baskets_forloop2:	
+	ble	$s3, $s2, pick_best_k_baskets_forloop1part2
+	sub	$a0, $s3, 1		#a0=j-1
+	sll	$a0, $a0, 2		#a0=(j-1)*4
+	add	$t0, $s1, 4		#t0=baskets->basket
+	add	$a0, $a0, $t0		#a0=&baskets->basket[j-1]	t0 could reuse
+	move	$s5, $a0		#s5=&baskets->basket[j-1]
+	lw	$a0, 0($a0)		#a0=baskets->basket[j-1]
+	jal	get_num_carrots		#get_num_carrots(baskets->basket[j-1]
+	move	$s4, $v0		#s4=get_num_carrots(baskets->basket[j-1]
+	
+	move	$a0, $s3, 		#a0=j
+	sll	$a0, $a0, 2		#a0=j*4
+	add	$t0, $s1, 4		#t0=&baskets->basket
+	add	$a0, $a0, $t0		#a0=&baskets->basket[j]		t0 could reuse
+	move	$s6, $a0		#s6=&baskets->basket[j]
+	lw	$a0, 0($a0)		#a0=baskets->basket[j]
+	jal	get_num_carrots		#get_num_carrots(baskets->basket[j]
+	bge	$s4, $v0, pick_best_k_baskets_forloop2part2
+	lw	$t0, 0($s5)		#t0=baskets->basket[j-1]
+	lw	$t1, 0($s6)		#t1=baskets->basket[j]
+	sw	$t0, 0($s6)
+	sw	$t1, 0($s5)
+pick_best_k_baskets_forloop2part2:
+	sub	$s3, $s3, 1		#j--
+	j	pick_best_k_baskets_forloop2
+pick_best_k_baskets_forloop1part2:
+	add	$s2, $s2, 1		#i++	
+	j	pick_best_k_baskets_forloop1
+pick_best_k_baskets_end:
+	lw	$ra, 0($sp)
+	lw	$s0, 4($sp)
+	lw	$s1, 8($sp)
+	lw	$s2, 12($sp)
+	lw	$s3, 16($sp)
+	lw	$s4, 20($sp)
+	lw	$s5, 24($sp)
+	lw	$s6, 28($sp)
+	add	$sp, $sp, 32
+	jr	$ra
+	
+	

@@ -1,0 +1,29 @@
+.text
+
+## int turns[4] = {1, 0, -1, 0}; // Declared as a global in calculate_identity_main.s
+## int
+## calculate_identity(int *v, int size) {
+##     int dist = size;
+##     int total = 0;
+##     int idx = -1;
+##     turns[1] = size;
+##     turns[3] = -size;
+##     while (dist > 0) {
+##         for (int i = 0; i < 4; i++) {
+##             for (int j = 0; j < dist; j++) {
+##                 idx = idx + turns[i];
+##                 total = accumulate(total, v[idx]);
+##                 v[idx] = total;
+##             }
+##             if (i % 2 == 0) {
+##                 dist--;
+##             }
+##         }
+##     }
+##     return twisted_sum_array(v, size * size);
+## }
+
+.globl calculate_identity
+calculate_identity:
+	# Your code goes here :)
+	jr	$ra

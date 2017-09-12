@@ -1,0 +1,38 @@
+.text
+
+## void
+## collect_baskets(int max_baskets, Node *spot, Baskets *baskets) {
+##     if (spot == NULL || baskets == NULL || spot->seen == 1) {
+##         return;
+##     }
+##     spot->seen = 1;
+##     for (int i = 0; i < spot->num_children && baskets->num_found < max_baskets;
+##          i++) {
+##         collect_baskets(max_baskets, spot->children[i], baskets);
+##     }
+##     if (baskets->num_found < max_baskets && get_num_carrots(spot) > 0) {
+##         baskets->basket[baskets->num_found] = spot;
+##         baskets->num_found++;
+##     }
+##     return;
+## }
+## 
+## struct Node {
+##     char seen;
+##     int basket;
+##     int dirt;
+##     int id_size;
+##     int *identity;
+##     int num_children;
+##     Node *children[4];
+## };
+## 
+## struct Baskets {
+##     int num_found;
+##     Node *basket[10];
+## };
+
+.globl collect_baskets
+collect_baskets:
+	# Your code goes here :)
+	jr  $ra

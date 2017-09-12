@@ -1,0 +1,35 @@
+.text
+
+## int
+## search_carrot(int max_baskets, int k, Node *root, Baskets *baskets) {
+##     if (root == NULL || baskets == NULL) {
+##         return 0;
+##     }
+##     baskets->num_found = 0;
+##     for (int i = 0; i < max_baskets; i++) {
+##         baskets->basket[i] = NULL;
+##     }
+##     collect_baskets(max_baskets, root, baskets);
+##     pick_best_k_baskets(k, baskets);
+##     return get_secret_id(k, baskets);
+## }
+## 
+## struct Node {
+##     char seen;
+##     int basket;
+##     int dirt;
+##     int id_size;
+##     int *identity;
+##     int num_children;
+##     Node *children[4];
+## };
+## 
+## struct Baskets {
+##     int num_found;
+##     Node *basket[10];
+## };
+
+.globl search_carrot
+search_carrot:
+	# Your code goes here :)
+	jr  $ra

@@ -1,0 +1,87 @@
+Grades for version committed on time
+	luv reader: 45.0 / 30.0
+			*Passed test: Basic I Detection Word Version
+				*I correctly detected on 1 cycles.
+				1.00/1.00 points
+			*Passed test: Basic L Detection
+				*L correctly detected on 1 cycles.
+				1.00/1.00 points
+			*Passed test: Basic U Detection
+				*U correctly detected on 1 cycles.
+				1.00/1.00 points
+			*Passed test: Basic I LU U Detection
+				*I correctly detected on 6 cycles.
+				*L correctly detected on 6 cycles.
+				*U correctly detected on 6 cycles.
+				6.00/6.00 points
+			*Passed test: I LU U Stress Test
+				*I correctly detected on 10 cycles.
+				*L correctly detected on 10 cycles.
+				*U correctly detected on 10 cycles.
+				16.00/16.00 points
+			*Passed test: I LU U Restart
+				*I correctly detected on 2 cycles.
+				*L correctly detected on 2 cycles.
+				*U correctly detected on 2 cycles.
+				5.00/5.00 points
+			*Passed test: Basic V Detection
+				*V correctly detected on 1 cycles.
+				1.00/1.00 points
+			*Passed test: Basic I LUV U Detection
+				*V correctly detected on 6 cycles.
+				3.00/3.00 points
+			*Passed test: I LUV U Stress Test
+				*V correctly detected on 10 cycles.
+				8.00/8.00 points
+			*Passed test: I LUV U Restart
+				*V correctly detected on 2 cycles.
+				3.00/3.00 points
+		
+	decoders: 20.0 / 20.0
+			*Passed test: 4 decoder
+			*Passed test: 8 decoder
+			*Passed test: 16 decoder
+			*Passed test: 32 decoder
+		
+	register file: 30.0 / 30.0
+			*Passed test: Register Zero always 0
+			*Passed test: Register 1 read and write correctly
+			*Passed test: Register 2 read and write correctly
+			*Passed test: Register 3 read and write correctly
+			*Passed test: Register 4 read and write correctly
+			*Passed test: Register 5 read and write correctly
+			*Passed test: Register 6 read and write correctly
+			*Passed test: Register 7 read and write correctly
+			*Passed test: Register 8 read and write correctly
+			*Passed test: Register 9 read and write correctly
+			*Passed test: Register 10 read and write correctly
+			*Passed test: Register 11 read and write correctly
+			*Passed test: Register 12 read and write correctly
+			*Passed test: Register 13 read and write correctly
+			*Passed test: Register 14 read and write correctly
+			*Passed test: Register 15 read and write correctly
+			*Passed test: Register 31 read and write correctly
+			*Passed test: Register 30 read and write correctly
+			*Passed test: Register 29 read and write correctly
+			*Passed test: Register 28 read and write correctly
+			*Passed test: Register 27 read and write correctly
+			*Passed test: Register 26 read and write correctly
+			*Passed test: Register 25 read and write correctly
+			*Passed test: Register 24 read and write correctly
+			*Passed test: Register 23 read and write correctly
+			*Passed test: Register 22 read and write correctly
+			*Passed test: Register 21 read and write correctly
+			*Passed test: Register 20 read and write correctly
+			*Passed test: Register 19 read and write correctly
+			*Passed test: Register 18 read and write correctly
+			*Passed test: Register 17 read and write correctly
+			*Passed test: Register 16 read and write correctly
+			*Passed test: Enable Works Correctly
+			*Passed test: Reset Works Correctly
+			*Passed test: Write One Register
+			*Passed test: Both Read Ports Work
+			*Passed test: Write All Registers
+		
+Total: 95.0 / 80.0
+
+Final Score: 95.0 / 80.0

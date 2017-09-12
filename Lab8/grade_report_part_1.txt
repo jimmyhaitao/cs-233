@@ -1,0 +1,29 @@
+Grades for version committed on time
+	get num carrots: 10.0 / 10
+		get_num_carrots.s: warning: Found 2 instances of jr $ra. Using multiple return points is error prone. Consider merging return points into a single label.
+			*Passed test: empty
+			*Passed test: empty (evil)
+			*Passed test: one carrot
+			*Passed test: one carrot (evil)
+			*Passed test: ff0000ff
+			*Passed test: ff0000ff (evil)
+			*Passed test: f00fff0
+			*Passed test: f00fff0 (evil)
+			*Passed test: ff00ff00
+			*Passed test: ff00ff00 (evil)
+		
+	pick_k_best_baskets: 10.0 / 10
+			*Passed test: four baskets
+			*Passed test: four baskets (evil)
+			*Passed test: eight baskets
+			*Passed test: eight baskets (evil)
+			*Passed test: no baskets
+			*Passed test: no baskets (evil)
+			*Passed test: one baskets one found
+			*Passed test: one baskets one found (evil)
+			*Passed test: six baskets six found
+			*Passed test: six baskets six found (evil)
+		
+Total: 20.0 / 20
+
+Final Score: 20.0 / 20

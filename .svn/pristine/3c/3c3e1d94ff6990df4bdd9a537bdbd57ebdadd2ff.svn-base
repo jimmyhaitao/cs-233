@@ -1,0 +1,31 @@
+module timer(TimerInterrupt, TimerAddress, cycle,
+             address, data, MemRead, MemWrite, clock, reset);
+    output        TimerInterrupt, TimerAddress;
+    output [31:0] cycle;
+    input  [31:0] address, data;
+    input         MemRead, MemWrite, clock, reset;
+
+    // complete the timer circuit here
+	wire	[31:0] Q,D,Q2;
+	wire	TimerWrite,TimerRead,Acknowledge;
+	wire	Qequality;
+	wire	resettwo;
+	wire	cE1;
+	wire	cE6;
+	register cycleCounter(Q, D, clock, 1,reset);
+	alu32 aluadd(D, , ,`ALU_ADD, Q,32'h1);
+	register interruptCycle(Q2,data, clock, TimerWrite,reset);
+	assign Qequality=(Q==Q2);
+	tristate #(32) timereadtri(cycle,Q, TimerRead);
+	assign resettwo=(Acknowledge|reset);
+	register #(1) interruptline(TimerInterrupt, 1, clock, Qequality,resettwo);
+	assign cE1=('hffff001c==address);
+	assign cE6=('hffff006c==address);
+	assign TimerAddress=(cE1|cE6);
+	assign Acknowledge=(cE6 & MemWrite);
+	assign TimerRead=(cE1&MemRead);
+	assign TimerWrite=(cE1&MemWrite);
+    // HINT: make your interrupt cycle register reset to 32'hffffffff
+    //       (using the reset_value parameter)
+    //       to prevent an interrupt being raised the very first cycle
+endmodule

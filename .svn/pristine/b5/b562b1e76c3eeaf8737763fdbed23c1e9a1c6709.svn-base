@@ -1,0 +1,34 @@
+.text
+
+## int
+## get_secret_id(int k, Baskets *baskets) {
+##     if (baskets == NULL) {
+##         return 0;
+##     }
+##     int secret_id = 0;
+##     for (int i = 0; i < k; i++) {
+##         secret_id += calculate_identity(baskets->basket[i]->identity,
+##                                         baskets->basket[i]->id_size);
+##     }
+##     return secret_id;
+## }
+## 
+## struct Node {
+##     char seen;
+##     int basket;
+##     int dirt;
+##     int id_size;
+##     int *identity;
+##     int num_children;
+##     Node *children[4];
+## };
+## 
+## struct Baskets {
+##     int num_found;
+##     Node *basket[10];
+## };
+
+.globl get_secret_id
+get_secret_id:
+	# Your code goes here :)
+	jr  $ra

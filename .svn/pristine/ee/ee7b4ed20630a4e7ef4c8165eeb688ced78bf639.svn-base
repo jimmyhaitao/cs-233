@@ -1,0 +1,41 @@
+Grades for version committed on time
+	keypad: 20.0 / 20
+			*Passed test: abcdefg = 48
+			*Passed test: abcdefg = 28
+			*Passed test: abcdefg = 18
+			*Passed test: abcdefg = 44
+			*Passed test: abcdefg = 24
+			*Passed test: abcdefg = 14
+			*Passed test: abcdefg = 42
+			*Passed test: abcdefg = 22
+			*Passed test: abcdefg = 12
+			*Passed test: abcdefg = 21
+			*Passed test: abcdefg = 00
+		
+	extract_message: 40.0 / 40
+			*Passed test: simple
+				*Encoded message: [105, 91, 42, 52, 64, 127, 127, 0] (i[*4@).
+				*Expected decode: [99, 102, 104, 103, 106, 109, 115, 0] (cfhgjms)
+				*Actual decode: [99, 102, 104, 103, 106, 109, 115, 0] (cfhgjms)
+			*Passed test: 3 words
+				*Encoded message: [170, 1, 85, 178, 197, 255, 255, 0, 186, 62, 8, 8, 116, 255, 254, 0, 34, 66, 225, 68, 145, 255, 247, 0, 7, 14, 14, 12, 0, 15, 15, 0] (ªU²Åÿÿº>tÿþ"BáDÿ÷).
+				*Expected decode: [118, 105, 116, 97, 108, 105, 116, 121, 32, 99, 114, 111, 115, 115, 112, 97, 116, 99, 104, 32, 112, 101, 110, 116, 97, 103, 111, 110, 0] (vitality crosspatch pentagon)
+				*Actual decode: [118, 105, 116, 97, 108, 105, 116, 121, 32, 99, 114, 111, 115, 115, 112, 97, 116, 99, 104, 32, 112, 101, 110, 116, 97, 103, 111, 110, 0, 0, 0, 0] (vitality crosspatch pentagon)
+			*Passed test: 5 words
+				*Encoded message: [122, 191, 79, 15, 192, 255, 255, 0, 154, 141, 214, 132, 65, 255, 223, 0, 60, 169, 158, 8, 183, 255, 191, 0, 77, 214, 205, 64, 146, 255, 223, 0, 57, 90, 57, 8, 86, 255, 127, 0, 151, 11, 110, 226, 136, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0] (z¿OÀÿÿÖAÿß<©·ÿ¿MÖÍ@ÿß9Z9Vÿnâÿÿ).
+				*Expected decode: [110, 111, 110, 111, 99, 99, 117, 114, 114, 101, 110, 99, 101, 32, 116, 111, 114, 116, 117, 111, 117, 115, 32, 118, 101, 114, 103, 101, 114, 32, 111, 118, 101, 114, 112, 111, 119, 101, 114, 32, 99, 111, 101, 118, 97, 108, 108, 121, 0] (nonoccurrence tortuous verger overpower coevally)
+				*Actual decode: [110, 111, 110, 111, 99, 99, 117, 114, 114, 101, 110, 99, 101, 32, 116, 111, 114, 116, 117, 111, 117, 115, 32, 118, 101, 114, 103, 101, 114, 32, 111, 118, 101, 114, 112, 111, 119, 101, 114, 32, 99, 111, 101, 118, 97, 108, 108, 121, 0, 0, 0, 0, 0, 0, 0, 0] (nonoccurrence tortuous verger overpower coevally)
+			*Passed test: Thousands of words
+				*Output hidden (too long)
+		
+	count_ones: 40.0 / 40
+			*Passed test: 2
+			*Passed test: 55
+			*Passed test: 42
+			*Passed test: 0xffffffff
+			*Passed test: 0x12345678
+			*Passed test: 0x55555555
+		
+Total: 100.0 / 100
+
+Final Score: 100.0 / 100

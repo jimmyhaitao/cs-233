@@ -1,0 +1,288 @@
+$date
+	Sat Feb  4 21:45:45 2017
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module keypad_test $end
+$var wire 7 ! inputs [6:0] $end
+$var wire 4 " number [3:0] $end
+$var wire 1 # valid $end
+$var reg 1 $ a $end
+$var reg 1 % b $end
+$var reg 1 & c $end
+$var reg 1 ' d $end
+$var reg 1 ( e $end
+$var reg 1 ) f $end
+$var reg 1 * g $end
+$scope module kp $end
+$var wire 1 + a $end
+$var wire 1 , b $end
+$var wire 1 - c $end
+$var wire 1 . d $end
+$var wire 1 / e $end
+$var wire 1 0 f $end
+$var wire 1 1 g $end
+$var wire 4 2 number [3:0] $end
+$var wire 1 # valid $end
+$var wire 1 3 w1 $end
+$var wire 1 4 w10 $end
+$var wire 1 5 w11 $end
+$var wire 1 6 w12 $end
+$var wire 1 7 w13 $end
+$var wire 1 8 w14 $end
+$var wire 1 9 w15 $end
+$var wire 1 : w16 $end
+$var wire 1 ; w17 $end
+$var wire 1 < w18 $end
+$var wire 1 = w19 $end
+$var wire 1 > w2 $end
+$var wire 1 ? w20 $end
+$var wire 1 @ w3 $end
+$var wire 1 A w4 $end
+$var wire 1 B w5 $end
+$var wire 1 C w6 $end
+$var wire 1 D w7 $end
+$var wire 1 E w8 $end
+$var wire 1 F w9 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0F
+0E
+0D
+0C
+0B
+0A
+0@
+0?
+0>
+0=
+0<
+0;
+0:
+09
+08
+07
+06
+05
+04
+03
+b0 2
+01
+00
+0/
+0.
+0-
+0,
+0+
+0*
+0)
+0(
+0'
+0&
+0%
+0$
+0#
+b0 "
+b0 !
+$end
+#10
+1#
+1A
+b1 "
+b1 2
+1@
+1=
+1D
+1>
+1C
+1F
+13
+1B
+1'
+1.
+1$
+b1001000 !
+1+
+#20
+b10 "
+b10 2
+17
+0D
+15
+19
+1<
+03
+0B
+1%
+1,
+0$
+b101000 !
+0+
+#30
+b11 "
+b11 2
+1#
+1D
+1A
+13
+1B
+14
+1=
+05
+1&
+1-
+0%
+b11000 !
+0,
+#40
+b100 "
+b100 2
+1:
+0D
+07
+18
+0C
+04
+09
+0<
+1(
+1/
+1$
+1+
+0'
+0.
+0&
+b1000100 !
+0-
+#50
+1;
+b101 "
+b101 2
+1E
+19
+1<
+03
+0B
+0:
+1%
+1,
+0$
+b100100 !
+0+
+#60
+1#
+17
+1A
+b110 "
+b110 2
+13
+1B
+14
+1=
+0E
+1&
+1-
+0%
+b10100 !
+0,
+#70
+b111 "
+b111 2
+1D
+07
+1C
+16
+1:
+0>
+0F
+0;
+04
+09
+0<
+1)
+10
+1$
+1+
+0(
+0/
+0&
+b1000010 !
+0-
+#80
+0D
+b1000 "
+b1000 2
+19
+1<
+03
+0B
+06
+0:
+1%
+1,
+0$
+b100010 !
+0+
+#90
+b1001 "
+b1001 2
+1#
+1D
+1A
+13
+1B
+1=
+1&
+1-
+0%
+b10010 !
+0,
+#100
+0A
+0D
+1?
+0@
+0C
+08
+b0 "
+b0 2
+03
+0B
+1*
+11
+1%
+1,
+0)
+00
+0&
+b100001 !
+0-
+#110
+0#
+0=
+0?
+09
+0<
+0*
+01
+0%
+b0 !
+0,
+#120
+1=
+19
+1<
+13
+1B
+1&
+1-
+1$
+b1010000 !
+1+

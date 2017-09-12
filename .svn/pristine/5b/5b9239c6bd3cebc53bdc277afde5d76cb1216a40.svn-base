@@ -1,0 +1,117 @@
+
+.text
+# For the two following functions from Lab7.2,
+# we highly recommend that you copy in our 
+# solutions when it is released on Tuesday night 
+# after the late deadline for Lab7.2
+#
+# If you reach this part before Tuesday night,
+# you can paste your Lab7.2 solution here for now
+
+.globl accumulate
+accumulate:
+    j accumulate
+    # And don't forget to delete the infinite loop :)
+    jr     $ra
+
+.globl calculate_identity
+calculate_identity:
+    j calculate_identity
+    # And don't forget to delete the infinite loop :)
+    jr     $ra
+
+##########################################################
+#################### Lab7.1 functions ####################
+##########################################################
+
+.globl detect_parity
+detect_parity:
+	li	$t1, 0			# $t1 = int bits_counted = 0
+	li	$v0, 1			# $v0 = int return_value = 1
+
+	li	$t0, 0			# $t0 = int i = 0
+dp_for:
+	bge	$t0, 32, dp_done	# if (i >= INT_SIZE), done
+
+	sra	$t3, $a0, $t0		# number >> i
+	and	$t3, $t3, 1		# $t3 = int bit = (number >> i) & 1
+
+	beq	$t3, 0, dp_skip		# if (bit == 0), skip
+	add	$t1, $t1, 1		# bits_counted++
+
+dp_skip:
+	add	$t0, $t0, 1		# i++
+	j	dp_for
+
+dp_done:
+	rem	$t3, $t1, 2		# bits_counted % 2
+	beq	$t3, 0, dp_ret		# if (bits_counted % 2 == 0), skip
+	li	$v0, 0			# return_value = 0
+
+dp_ret:
+	jr	$ra			# $v0 is already return_value
+
+.globl max_conts_bits_in_common
+max_conts_bits_in_common:
+	li	$t1, 0			# $t1 = int bits_seen = 0
+	li	$v0, 0			# $v0 = int max_seen = 0
+	and	$t2, $a0, $a1		# $t2 = int c = a & b
+
+	li	$t0, 0			# $t0 = int i = 0
+mcbic_for:
+	bge	$t0, 32, mcbic_done	# if (i >= INT_SIZE), done
+
+	sra	$t3, $t2, $t0		# c >> i
+	and	$t3, $t3, 1		# $t3 = int bit = (c >> i) & 1
+
+	beq	$t3, 0, mcbic_else 	# if (bit == 0), else
+	add	$t1, $t1, 1		# bits_seen++
+	j	mcbic_cont
+
+mcbic_else:
+	ble	$t1, $v0, mcbic_skip 	# if (bit_seen <= max_seen), skip
+	move	$v0, $t1		# max_seen = bits_seen
+
+mcbic_skip:
+	li	$t1, 0			# bits_seen = 0
+
+mcbic_cont:
+	add	$t0, $t0, 1		# i++
+	j	mcbic_for
+
+mcbic_done:
+	ble	$t1, $v0, mcbic_ret 	# if (bits_seen <= max_seen), skip
+	move	$v0, $t1		# max_seen = bits_seen
+
+mcbic_ret:
+	jr	$ra			# $v0 is already max_seen
+
+.globl twisted_sum_array
+twisted_sum_array:
+	li	$v0, 0			# $v0 = int sum = 0
+
+	li	$t0, 0			# $t0 = int i = 0
+tsa_for:
+	bge	$t0, $a1, tsa_done	# if (i >= length), done
+
+	sub	$t1, $a1, 1		# length - 1
+	sub	$t1, $t1, $t0		# length - 1 - i
+	mul	$t1, $t1, 4
+	add	$t1, $t1, $a0		# &v[length - 1 - i]
+	lw	$t2, 0($t1)		# v[length - 1 - i]
+	and	$t2, $t2, 1		# v[length - 1 - i] & 1
+
+	beq	$t2, 0, tsa_skip	# if (v[length - 1 - i] & 1 == 0), skip
+	sra	$v0, $v0, 1		# sum >>= 1
+
+tsa_skip:
+	mul	$t1, $t0, 4
+	add	$t1, $t1, $a0		# &v[i]
+	lw	$t2, 0($t1)		# v[i]
+	add	$v0, $v0, $t2		# sum += v[i]
+
+	add	$t0, $t0, 1		# i++
+	j	tsa_for
+
+tsa_done:
+	jr	$ra			# $v0 is already sum

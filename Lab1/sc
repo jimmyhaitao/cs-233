@@ -1,0 +1,58 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.6 " "(v0_9_6)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x2221d40 .scope module, "sc_test" "sc_test" 2 1;
+ .timescale 0 0;
+v0x22555c0_0 .var "a_in", 0 0;
+v0x2255660_0 .var "b_in", 0 0;
+v0x2255710_0 .net "c_out", 0 0, L_0x22558a0; 1 drivers
+v0x22557c0_0 .net "s_out", 0 0, L_0x2255cc0; 1 drivers
+S_0x2244340 .scope module, "sc1" "sc_block" 2 7, 3 1, S_0x2221d40;
+ .timescale 0 0;
+L_0x22558a0 .functor AND 1, v0x22555c0_0, v0x2255660_0, C4<1>, C4<1>;
+L_0x22559f0 .functor NOT 1, v0x22555c0_0, C4<0>, C4<0>, C4<0>;
+L_0x2255a50 .functor NOT 1, v0x2255660_0, C4<0>, C4<0>, C4<0>;
+L_0x2255ab0 .functor AND 1, v0x22555c0_0, L_0x2255a50, C4<1>, C4<1>;
+L_0x2255ba0 .functor AND 1, v0x2255660_0, L_0x22559f0, C4<1>, C4<1>;
+L_0x2255cc0 .functor OR 1, L_0x2255ab0, L_0x2255ba0, C4<0>, C4<0>;
+v0x2221e30_0 .net "a", 0 0, v0x22555c0_0; 1 drivers
+v0x22550c0_0 .net "b", 0 0, v0x2255660_0; 1 drivers
+v0x2255160_0 .alias "c", 0 0, v0x2255710_0;
+v0x2255200_0 .net "not_a", 0 0, L_0x22559f0; 1 drivers
+v0x22552b0_0 .net "not_b", 0 0, L_0x2255a50; 1 drivers
+v0x2255350_0 .alias "s", 0 0, v0x22557c0_0;
+v0x2255430_0 .net "w1", 0 0, L_0x2255ab0; 1 drivers
+v0x22554d0_0 .net "w2", 0 0, L_0x2255ba0; 1 drivers
+    .scope S_0x2221d40;
+T_0 ;
+    %vpi_call 2 12 "$dumpfile", "sc.vcd";
+    %vpi_call 2 13 "$dumpvars", 1'sb0, S_0x2221d40;
+    %set/v v0x22555c0_0, 0, 1;
+    %set/v v0x2255660_0, 0, 1;
+    %delay 10, 0;
+    %set/v v0x22555c0_0, 0, 1;
+    %set/v v0x2255660_0, 1, 1;
+    %delay 10, 0;
+    %set/v v0x22555c0_0, 1, 1;
+    %set/v v0x2255660_0, 0, 1;
+    %delay 10, 0;
+    %set/v v0x22555c0_0, 1, 1;
+    %set/v v0x2255660_0, 1, 1;
+    %delay 10, 0;
+    %vpi_call 2 26 "$finish";
+    %end;
+    .thread T_0;
+    .scope S_0x2221d40;
+T_1 ;
+    %vpi_call 2 30 "$monitor", "At time %2t, a_in = %d b_in = %d s_out = %d c_out = %d", $time, v0x22555c0_0, v0x2255660_0, v0x22557c0_0, v0x2255710_0;
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "sc_block_tb.v";
+    "sc_block.v";

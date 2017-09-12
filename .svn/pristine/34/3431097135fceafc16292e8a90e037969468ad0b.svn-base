@@ -1,0 +1,23 @@
+.text
+
+## int
+## detect_parity(int number) {
+##     int bits_counted = 0;
+##     int return_value = 1;
+##     for (int i = 0; i < INT_SIZE; i++) {
+##         int bit = (number >> i) & 1;
+##         // zero is false, anything else is true
+##         if (bit) { 
+##             bits_counted++;
+##         }
+##     }
+##     if (bits_counted % 2 != 0) {
+##         return_value = 0;
+##     }
+##     return return_value;
+## }
+
+.globl detect_parity
+detect_parity:
+	# Your code goes here :)
+	jr	$ra

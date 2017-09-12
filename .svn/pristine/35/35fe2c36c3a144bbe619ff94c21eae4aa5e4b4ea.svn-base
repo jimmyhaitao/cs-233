@@ -1,0 +1,18 @@
+.text
+
+## int
+## accumulate(int total, int value) {
+##     if (max_conts_bits_in_common(total, value) >= 2) {
+##         total = total | value;
+##     } else if (detect_parity(value) == 0) {
+##         total = total + value;
+##     } else {
+##         total = total * value;
+##     }
+##     return total;
+## }
+
+.globl accumulate
+accumulate:
+	# Your code goes here :)
+	jr	$ra

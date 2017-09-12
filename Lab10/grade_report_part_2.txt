@@ -1,0 +1,22 @@
+Grades for version committed on time
+	part 2: 50.0 / 60.0
+			*Partially passed test: mapseed 32
+					BUNNY_MOVE not acknowledged
+			*Partially passed test: mapseed 3
+					BUNNY_MOVE not acknowledged
+			*Partially passed test: mapseed 23
+					BUNNY_MOVE not acknowledged
+			*Partially passed test: mapseed 4
+					BUNNY_MOVE not acknowledged
+			*Partially passed test: mapseed 18
+					BUNNY_MOVE not acknowledged
+			*Partially passed test: mapseed 35
+					BUNNY_MOVE not acknowledged
+			*Partially passed test: mapseed 37
+					BUNNY_MOVE not acknowledged
+			*Partially passed test: mapseed 104
+					BUNNY_MOVE not acknowledged
+		
+Total: 50.0 / 60.0
+
+Final Score: 50.0 / 60.0

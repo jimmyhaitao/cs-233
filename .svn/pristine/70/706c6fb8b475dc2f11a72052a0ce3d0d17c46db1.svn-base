@@ -1,0 +1,42 @@
+.data
+# syscall constants
+PRINT_STRING            = 4
+PRINT_CHAR              = 11
+PRINT_INT               = 1
+
+# memory-mapped I/O
+VELOCITY                = 0xffff0010
+ANGLE                   = 0xffff0014
+ANGLE_CONTROL           = 0xffff0018
+
+BOT_X                   = 0xffff0020
+BOT_Y                   = 0xffff0024
+
+TIMER                   = 0xffff001c
+
+SEARCH_BUNNIES          = 0xffff0054
+CATCH_BUNNY             = 0xffff0058
+PUT_BUNNIES_IN_PLAYPEN  = 0xffff005c
+
+PLAYPEN_LOCATION        = 0xffff0044
+
+# interrupt constants
+BUNNY_MOVE_INT_MASK     = 0x400
+BUNNY_MOVE_ACK          = 0xffff0020
+
+BONK_INT_MASK           = 0x1000
+BONK_ACK                = 0xffff0060
+
+TIMER_INT_MASK          = 0x8000
+TIMER_ACK               = 0xffff006c
+
+.data
+# put your data things here
+
+
+.text
+main:
+	# put your code here :)
+
+	# note that we infinite loop to avoid stopping the simulation early
+	j	main

@@ -1,0 +1,72 @@
+./decoder_exe
+VCD info: dumpfile decoder.vcd opened for output.
+./full_machine_exe
+VCD info: dumpfile fm.vcd opened for output.
+At time                    0, reset = 1 pc = 00000000, inst = 3c021001, except = 0
+At time                    3, reset = 0 pc = 00000000, inst = 3c021001, except = 0
+At time                    5, reset = 0 pc = 00000004, inst = 8c43000c, except = 0
+At time                   15, reset = 0 pc = 00000008, inst = 0060402a, except = 0
+At time                   25, reset = 0 pc = 0000000c, inst = 0040482a, except = 0
+At time                   35, reset = 0 pc = 00000010, inst = 0002502a, except = 0
+At time                   45, reset = 0 pc = 00000014, inst = 0043582a, except = 0
+At time                   55, reset = 0 pc = 00000018, inst = 1520000e, except = 0
+At time                   65, reset = 0 pc = 0000001c, inst = 1168000f, except = 0
+At time                   75, reset = 0 pc = 00000020, inst = 9044000c, except = 0
+At time                   85, reset = 0 pc = 00000024, inst = 9045000d, except = 0
+At time                   95, reset = 0 pc = 00000028, inst = 9046000e, except = 0
+At time                  105, reset = 0 pc = 0000002c, inst = 9047000f, except = 0
+At time                  115, reset = 0 pc = 00000030, inst = ac400000, except = 0
+At time                  125, reset = 0 pc = 00000034, inst = 8c4c0000, except = 0
+At time                  135, reset = 0 pc = 00000038, inst = a0440002, except = 0
+At time                  145, reset = 0 pc = 0000003c, inst = 8c4d0000, except = 0
+At time                  155, reset = 0 pc = 00000040, inst = 0042902c, except = 0
+At time                  165, reset = 0 pc = 00000044, inst = 8c4e0010, except = 0
+At time                  175, reset = 0 pc = 00000048, inst = 01c00008, except = 0
+At time                  185, reset = 0 pc = 0000005c, inst = 20100002, except = 0
+At time                  195, reset = 0 pc = 00000060, inst = 1600fffc, except = 0
+At time                  205, reset = 0 pc = 00000054, inst = 3c11f00f, except = 0
+At time                  215, reset = 0 pc = 00000058, inst = 08000015, except = 0
+At time                  225, reset = 0 pc = 00000054, inst = 3c11f00f, except = 0
+At time                  235, reset = 0 pc = 00000058, inst = 08000015, except = 0
+At time                  245, reset = 0 pc = 00000054, inst = 3c11f00f, except = 0
+At time                  255, reset = 0 pc = 00000058, inst = 08000015, except = 0
+At time                  265, reset = 0 pc = 00000054, inst = 3c11f00f, except = 0
+At time                  275, reset = 0 pc = 00000058, inst = 08000015, except = 0
+At time                  285, reset = 0 pc = 00000054, inst = 3c11f00f, except = 0
+At time                  295, reset = 0 pc = 00000058, inst = 08000015, except = 0
+At time                  305, reset = 0 pc = 00000054, inst = 3c11f00f, except = 0
+Dumping register state: 
+  Register :  hex-value (  dec-value )
+          0: 0x00000000 (          0 )
+          1: 0x00000000 (          0 )
+          2: 0x10010000 (  268500992 )
+          3: 0xcafebabe ( -889275714 )
+          4: 0x000000be (        190 )
+          5: 0x000000ba (        186 )
+          6: 0x000000fe (        254 )
+          7: 0x000000ca (        202 )
+          8: 0x00000001 (          1 )
+          9: 0x00000000 (          0 )
+         10: 0x00000001 (          1 )
+         11: 0x00000000 (          0 )
+         12: 0x00000000 (          0 )
+         13: 0x00be0000 (   12451840 )
+         14: 0x0000005c (         92 )
+         15: 0x00000000 (          0 )
+         16: 0x00000002 (          2 )
+         17: 0xf00f0000 ( -267452416 )
+         18: 0x10bf0000 (  280952832 )
+         19: 0x00000000 (          0 )
+         20: 0x00000000 (          0 )
+         21: 0x00000000 (          0 )
+         22: 0x00000000 (          0 )
+         23: 0x00000000 (          0 )
+         24: 0x00000000 (          0 )
+         25: 0x00000000 (          0 )
+         26: 0x00000000 (          0 )
+         27: 0x00000000 (          0 )
+         28: 0x00000000 (          0 )
+         29: 0x00000000 (          0 )
+         30: 0x00000000 (          0 )
+         31: 0x00000000 (          0 )
+Done.  Simulation ending.

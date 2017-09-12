@@ -1,0 +1,263 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.6 " "(v0_9_6)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x185d3d0 .scope module, "i_reader_test" "i_reader_test" 2 1;
+ .timescale 0 0;
+v0x188eaf0_0 .net "I", 0 0, L_0x18904f0; 1 drivers
+v0x188eba0_0 .var "bits", 2 0;
+v0x188ec50_0 .var "clk", 0 0;
+v0x188ecd0_0 .var "restart", 0 0;
+S_0x18638b0 .scope module, "ir" "i_reader" 2 38, 3 25, S_0x185d3d0;
+ .timescale 0 0;
+L_0x188d950 .functor OR 1, v0x188ccc0_0, v0x188c340_0, C4<0>, C4<0>;
+L_0x188f080 .functor OR 1, L_0x188ede0, L_0x188eef0, C4<0>, C4<0>;
+L_0x188f180 .functor NOT 1, L_0x188f080, C4<0>, C4<0>, C4<0>;
+L_0x188f230 .functor AND 1, L_0x188d950, L_0x188f180, C4<1>, C4<1>;
+L_0x188f330 .functor OR 1, v0x188ecd0_0, L_0x188f230, C4<0>, C4<0>;
+L_0x188f430 .functor OR 1, v0x188c7e0_0, v0x188d120_0, C4<0>, C4<0>;
+L_0x188f530 .functor NOT 1, L_0x188ede0, C4<0>, C4<0>, C4<0>;
+L_0x188f590 .functor AND 1, L_0x188f430, L_0x188f530, C4<1>, C4<1>;
+L_0x188f6e0 .functor OR 1, L_0x188f330, L_0x188f590, C4<0>, C4<0>;
+L_0x188f830 .functor OR 1, v0x188ccc0_0, v0x188c340_0, C4<0>, C4<0>;
+L_0x188f8f0 .functor OR 1, L_0x188f830, v0x188d120_0, C4<0>, C4<0>;
+L_0x188f950 .functor AND 1, L_0x188f8f0, L_0x188ede0, C4<1>, C4<1>;
+L_0x188f890 .functor NOT 1, v0x188ecd0_0, C4<0>, C4<0>, C4<0>;
+L_0x188fa90 .functor AND 1, L_0x188f950, L_0x188f890, C4<1>, C4<1>;
+L_0x188fc10 .functor OR 1, v0x188ccc0_0, v0x188c340_0, C4<0>, C4<0>;
+L_0x188fd90 .functor AND 1, L_0x188fc10, L_0x188eef0, C4<1>, C4<1>;
+L_0x188fe80 .functor NOT 1, v0x188ecd0_0, C4<0>, C4<0>, C4<0>;
+L_0x188ff70 .functor AND 1, L_0x188fd90, L_0x188fe80, C4<1>, C4<1>;
+L_0x188fdf0 .functor AND 1, v0x188c7e0_0, L_0x188ede0, C4<1>, C4<1>;
+L_0x18900c0 .functor NOT 1, v0x188ecd0_0, C4<0>, C4<0>, C4<0>;
+L_0x1890020 .functor AND 1, L_0x188fdf0, L_0x18900c0, C4<1>, C4<1>;
+L_0x18904f0 .functor BUFZ 1, v0x188c340_0, C4<0>, C4<0>, C4<0>;
+v0x188d270_0 .alias "I", 0 0, v0x188eaf0_0;
+v0x188d330_0 .net *"_s0", 2 0, C4<000>; 1 drivers
+v0x188d3d0_0 .net *"_s10", 0 0, L_0x188f080; 1 drivers
+v0x188d470_0 .net *"_s12", 0 0, L_0x188f180; 1 drivers
+v0x188d520_0 .net *"_s14", 0 0, L_0x188f230; 1 drivers
+v0x188d5c0_0 .net *"_s16", 0 0, L_0x188f330; 1 drivers
+v0x188d6a0_0 .net *"_s18", 0 0, L_0x188f430; 1 drivers
+v0x188d740_0 .net *"_s20", 0 0, L_0x188f530; 1 drivers
+v0x188d830_0 .net *"_s22", 0 0, L_0x188f590; 1 drivers
+v0x188d8d0_0 .net *"_s26", 0 0, L_0x188f830; 1 drivers
+v0x188d9d0_0 .net *"_s28", 0 0, L_0x188f8f0; 1 drivers
+v0x188da70_0 .net *"_s30", 0 0, L_0x188f950; 1 drivers
+v0x188db80_0 .net *"_s32", 0 0, L_0x188f890; 1 drivers
+v0x188dc20_0 .net *"_s36", 0 0, L_0x188fc10; 1 drivers
+v0x188dd40_0 .net *"_s38", 0 0, L_0x188fd90; 1 drivers
+v0x188dde0_0 .net *"_s4", 2 0, C4<111>; 1 drivers
+v0x188dca0_0 .net *"_s40", 0 0, L_0x188fe80; 1 drivers
+v0x188df30_0 .net *"_s44", 0 0, L_0x188fdf0; 1 drivers
+v0x188e050_0 .net *"_s46", 0 0, L_0x18900c0; 1 drivers
+v0x188e0d0_0 .net *"_s8", 0 0, L_0x188d950; 1 drivers
+v0x188dfb0_0 .net "bits", 2 0, v0x188eba0_0; 1 drivers
+v0x188e200_0 .net "clk", 0 0, v0x188ec50_0; 1 drivers
+v0x188e340_0 .net "in000", 0 0, L_0x188ede0; 1 drivers
+v0x188e3c0_0 .net "in111", 0 0, L_0x188eef0; 1 drivers
+v0x188e280_0 .net "restart", 0 0, v0x188ecd0_0; 1 drivers
+v0x188e510_0 .net "sBlank", 0 0, v0x188ccc0_0; 1 drivers
+v0x188e440_0 .net "sBlank_next", 0 0, L_0x188fa90; 1 drivers
+v0x188e670_0 .net "sGarbage", 0 0, v0x188d120_0; 1 drivers
+v0x188e5c0_0 .net "sGarbage_next", 0 0, L_0x188f6e0; 1 drivers
+v0x188e7e0_0 .net "sI", 0 0, v0x188c7e0_0; 1 drivers
+v0x188e720_0 .net "sI_end", 0 0, v0x188c340_0; 1 drivers
+v0x188e960_0 .net "sI_end_next", 0 0, L_0x1890020; 1 drivers
+v0x188e890_0 .net "sI_next", 0 0, L_0x188ff70; 1 drivers
+L_0x188ede0 .cmp/eq 3, v0x188eba0_0, C4<000>;
+L_0x188eef0 .cmp/eq 3, v0x188eba0_0, C4<111>;
+S_0x188cde0 .scope module, "fsGarbage" "dffe" 3 43, 3 9, S_0x18638b0;
+ .timescale 0 0;
+v0x188cf40_0 .alias "clk", 0 0, v0x188e200_0;
+v0x188cfe0_0 .alias "d", 0 0, v0x188e5c0_0;
+v0x188d080_0 .net "enable", 0 0, C4<1>; 1 drivers
+v0x188d120_0 .var "q", 0 0;
+v0x188d1d0_0 .net "reset", 0 0, C4<0>; 1 drivers
+E_0x188ced0 .event edge, v0x188d1d0_0;
+S_0x188c930 .scope module, "fsBlank" "dffe" 3 44, 3 9, S_0x18638b0;
+ .timescale 0 0;
+v0x188ca90_0 .alias "clk", 0 0, v0x188e200_0;
+v0x188cb80_0 .alias "d", 0 0, v0x188e440_0;
+v0x188cc20_0 .net "enable", 0 0, C4<1>; 1 drivers
+v0x188ccc0_0 .var "q", 0 0;
+v0x188cd40_0 .net "reset", 0 0, C4<0>; 1 drivers
+E_0x188ca20 .event edge, v0x188cd40_0;
+S_0x188c490 .scope module, "fsI" "dffe" 3 45, 3 9, S_0x18638b0;
+ .timescale 0 0;
+v0x188c5f0_0 .alias "clk", 0 0, v0x188e200_0;
+v0x188c6c0_0 .alias "d", 0 0, v0x188e890_0;
+v0x188c740_0 .net "enable", 0 0, C4<1>; 1 drivers
+v0x188c7e0_0 .var "q", 0 0;
+v0x188c890_0 .net "reset", 0 0, C4<0>; 1 drivers
+E_0x188c580 .event edge, v0x188c890_0;
+S_0x1863530 .scope module, "fsI_end" "dffe" 3 46, 3 9, S_0x18638b0;
+ .timescale 0 0;
+v0x1861270_0 .alias "clk", 0 0, v0x188e200_0;
+v0x188c200_0 .alias "d", 0 0, v0x188e960_0;
+v0x188c2a0_0 .net "enable", 0 0, C4<1>; 1 drivers
+v0x188c340_0 .var "q", 0 0;
+v0x188c3f0_0 .net "reset", 0 0, C4<0>; 1 drivers
+E_0x185fff0 .event posedge, v0x1861270_0;
+E_0x1860e60 .event edge, v0x188c3f0_0;
+    .scope S_0x188cde0;
+T_0 ;
+    %wait E_0x188ced0;
+    %load/v 8, v0x188d1d0_0, 1;
+    %jmp/0xz  T_0.0, 8;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x188d120_0, 0, 0;
+T_0.0 ;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0x188cde0;
+T_1 ;
+    %wait E_0x185fff0;
+    %load/v 8, v0x188d1d0_0, 1;
+    %cmpi/u 8, 0, 1;
+    %mov 8, 4, 1;
+    %load/v 9, v0x188d080_0, 1;
+    %and 8, 9, 1;
+    %jmp/0xz  T_1.0, 8;
+    %load/v 8, v0x188cfe0_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x188d120_0, 0, 8;
+T_1.0 ;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x188c930;
+T_2 ;
+    %wait E_0x188ca20;
+    %load/v 8, v0x188cd40_0, 1;
+    %jmp/0xz  T_2.0, 8;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x188ccc0_0, 0, 0;
+T_2.0 ;
+    %jmp T_2;
+    .thread T_2, $push;
+    .scope S_0x188c930;
+T_3 ;
+    %wait E_0x185fff0;
+    %load/v 8, v0x188cd40_0, 1;
+    %cmpi/u 8, 0, 1;
+    %mov 8, 4, 1;
+    %load/v 9, v0x188cc20_0, 1;
+    %and 8, 9, 1;
+    %jmp/0xz  T_3.0, 8;
+    %load/v 8, v0x188cb80_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x188ccc0_0, 0, 8;
+T_3.0 ;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_0x188c490;
+T_4 ;
+    %wait E_0x188c580;
+    %load/v 8, v0x188c890_0, 1;
+    %jmp/0xz  T_4.0, 8;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x188c7e0_0, 0, 0;
+T_4.0 ;
+    %jmp T_4;
+    .thread T_4, $push;
+    .scope S_0x188c490;
+T_5 ;
+    %wait E_0x185fff0;
+    %load/v 8, v0x188c890_0, 1;
+    %cmpi/u 8, 0, 1;
+    %mov 8, 4, 1;
+    %load/v 9, v0x188c740_0, 1;
+    %and 8, 9, 1;
+    %jmp/0xz  T_5.0, 8;
+    %load/v 8, v0x188c6c0_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x188c7e0_0, 0, 8;
+T_5.0 ;
+    %jmp T_5;
+    .thread T_5;
+    .scope S_0x1863530;
+T_6 ;
+    %wait E_0x1860e60;
+    %load/v 8, v0x188c3f0_0, 1;
+    %jmp/0xz  T_6.0, 8;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x188c340_0, 0, 0;
+T_6.0 ;
+    %jmp T_6;
+    .thread T_6, $push;
+    .scope S_0x1863530;
+T_7 ;
+    %wait E_0x185fff0;
+    %load/v 8, v0x188c3f0_0, 1;
+    %cmpi/u 8, 0, 1;
+    %mov 8, 4, 1;
+    %load/v 9, v0x188c2a0_0, 1;
+    %and 8, 9, 1;
+    %jmp/0xz  T_7.0, 8;
+    %load/v 8, v0x188c200_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x188c340_0, 0, 8;
+T_7.0 ;
+    %jmp T_7;
+    .thread T_7;
+    .scope S_0x185d3d0;
+T_8 ;
+    %set/v v0x188ecd0_0, 1, 1;
+    %end;
+    .thread T_8;
+    .scope S_0x185d3d0;
+T_9 ;
+    %set/v v0x188eba0_0, 0, 3;
+    %end;
+    .thread T_9;
+    .scope S_0x185d3d0;
+T_10 ;
+    %set/v v0x188ec50_0, 0, 1;
+    %end;
+    .thread T_10;
+    .scope S_0x185d3d0;
+T_11 ;
+    %delay 5, 0;
+    %load/v 8, v0x188ec50_0, 1;
+    %inv 8, 1;
+    %set/v v0x188ec50_0, 8, 1;
+    %jmp T_11;
+    .thread T_11;
+    .scope S_0x185d3d0;
+T_12 ;
+    %vpi_call 2 10 "$dumpfile", "i_reader.vcd";
+    %vpi_call 2 11 "$dumpvars", 1'sb0, S_0x185d3d0;
+    %delay 12, 0;
+    %set/v v0x188ecd0_0, 0, 1;
+    %delay 20, 0;
+    %set/v v0x188eba0_0, 1, 3;
+    %delay 10, 0;
+    %set/v v0x188eba0_0, 0, 3;
+    %delay 10, 0;
+    %set/v v0x188eba0_0, 1, 3;
+    %delay 10, 0;
+    %set/v v0x188eba0_0, 0, 3;
+    %delay 10, 0;
+    %movi 8, 3, 3;
+    %set/v v0x188eba0_0, 8, 3;
+    %delay 10, 0;
+    %set/v v0x188eba0_0, 0, 3;
+    %delay 10, 0;
+    %set/v v0x188eba0_0, 0, 3;
+    %delay 10, 0;
+    %set/v v0x188eba0_0, 1, 3;
+    %delay 10, 0;
+    %movi 8, 3, 3;
+    %set/v v0x188eba0_0, 8, 3;
+    %delay 10, 0;
+    %vpi_call 2 34 "$finish";
+    %end;
+    .thread T_12;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "i_reader_tb.v";
+    "i_reader.v";

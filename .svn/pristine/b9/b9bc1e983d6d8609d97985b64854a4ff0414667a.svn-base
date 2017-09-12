@@ -1,0 +1,28 @@
+.text
+
+## int
+## max_conts_bits_in_common(int a, int b) {
+##     int bits_seen = 0;
+##     int max_seen = 0;
+##     int c = a & b;
+##     for (int i = 0; i < INT_SIZE; i++) {
+##         int bit = (c >> i) & 1;
+##         if (bit) {
+##             bits_seen++;
+##         } else {
+##             if (bits_seen > max_seen) {
+##                 max_seen = bits_seen;
+##             }
+##             bits_seen = 0;
+##         }
+##     }
+##     if (bits_seen > max_seen) {
+##         max_seen = bits_seen;
+##     }
+##     return max_seen;
+## }
+
+.globl max_conts_bits_in_common
+max_conts_bits_in_common:
+	# Your code goes here :)
+	jr	$ra

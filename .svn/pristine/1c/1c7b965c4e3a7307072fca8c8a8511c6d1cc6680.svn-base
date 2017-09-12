@@ -1,0 +1,58 @@
+Grades for version committed on time
+	get_secret_id: 16.0 / 20
+			*Failed test: null
+				*Your output: $v0 unchanged
+			*Failed test: null (evil)
+				*Your output: $v0 unchanged
+			*Passed test: no baskets
+			*Passed test: no baskets (evil)
+			*Passed test: four baskets
+			*Passed test: four baskets (evil)
+			*Passed test: four baskets
+			*Passed test: four baskets (evil)
+			*Passed test: ten baskets
+			*Passed test: ten baskets (evil)
+		
+	collect_baskets: 30.0 / 30
+		collect_baskets.s: warning: Found 4 instances of jr $ra. Using multiple return points is error prone. Consider merging return points into a single label.
+			*Passed test: base case
+			*Passed test: base case (evil)
+			*Passed test: one node
+			*Passed test: one node (evil)
+			*Passed test: three nodes
+			*Passed test: three nodes (evil)
+			*Passed test: four nodes max three(with store byte test)
+			*Passed test: four nodes max three(with store byte test) (evil)
+			*Passed test: max zero
+			*Passed test: max zero (evil)
+			*Passed test: all the nodes(with store byte test)
+			*Passed test: all the nodes(with store byte test) (evil)
+			*Passed test: empty node
+			*Passed test: empty node (evil)
+			*Passed test: all the nodes max 2
+			*Passed test: all the nodes max 2 (evil)
+			*Passed test: 3 nodes max 10
+			*Passed test: 3 nodes max 10 (evil)
+			*Passed test: test load byte
+			*Passed test: test load byte (evil)
+		
+	search_carrot: 18.0 / 30
+		search_carrot.s: warning: Found 3 instances of jr $ra. Using multiple return points is error prone. Consider merging return points into a single label.
+			*Failed test: base case
+				*Your output: $v0 unchanged
+			*Failed test: base case (evil)
+				*Your output: $v0 unchanged
+			*Failed test: no baskets
+				*Your output: $v0 unchanged
+			*Failed test: no baskets (evil)
+				*Your output: $v0 unchanged
+			*Passed test: search_4_2_n5
+			*Passed test: search_4_2_n5 (evil)
+			*Passed test: search_4_2_n9
+			*Passed test: search_4_2_n9 (evil)
+			*Passed test: large search
+			*Passed test: large search (evil)
+		
+Total: 64.0 / 80
+
+Final Score: 64.0 / 80

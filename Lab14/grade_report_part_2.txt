@@ -1,0 +1,10 @@
+Grades for version committed on time
+	mandelbrot: 50 / 50
+			*Passed test: Achieved 2x speedup
+		
+	compiler_vectorization: 30 / 30
+			*Full credit given for compiler-based vectorization problems
+		
+Total: 80.0 / 80
+
+Final Score: 80.0 / 80

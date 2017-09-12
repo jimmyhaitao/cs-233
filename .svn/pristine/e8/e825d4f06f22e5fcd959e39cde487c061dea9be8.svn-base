@@ -1,0 +1,76 @@
+// full_machine: execute a series of MIPS instructions from an instruction cache
+//
+// except (output) - set to 1 when an unrecognized instruction is to be executed.
+// clock   (input) - the clock signal
+// reset   (input) - set to 1 to set all registers to zero, set to 0 for normal execution.
+
+module sign_extender(out,in);
+	output [31:0] out;
+	input [15:0] in;
+	
+	assign out[15:0]=in[15:0];
+	assign out[31:16]={16{in[15]}};
+endmodule
+
+module shift_left2(out,in);
+	output[31:0] out;
+	input[31:0] in;
+	assign out[31:2]=in[29:0];
+	assign out[1]=0;
+	assign out[0]=0;
+endmodule
+
+module full_machine(except, clock, reset);
+    output      except;
+    input       clock, reset;
+
+    wire [31:0] inst;  
+    wire [31:0] PC,luiin;  
+	wire [31:0] nextPC,pc_plus4,branch_Offset,branch,jump,data_out,addr,loadbyte,bytemem,sltout,selectmuxin,memread,addmmux,afteraddm;
+	wire [2:0] alu_op;
+	wire [31:0] imm32,rdData;
+	wire [31:0] A,B,rtData,out;
+	wire [4:0] rdest;
+	wire wr_enable, alu_src2,rd_src;
+	wire overflow,zero,negative;
+	wire [1:0]control_type;
+	wire lui,slt,byte_load,word_we,byte_we,mem_read,addm;
+	wire [7:0] byteout;
+	wire nxoro;
+	assign jump={PC[31:28],inst[25:0],2'b00};//
+	assign loadbyte={24'b0,byteout};//
+	assign nxoro=negative ^ overflow;//
+	assign selectmuxin={31'b0,nxoro};//
+	assign luiin={inst[15:0],16'b0};//
+    // DO NOT comment out or rename this module
+    // or the test bench will break
+ 	register #(32) PC_reg(PC,nextPC,clock,1,reset); //
+	alu32 pcplus4(pc_plus4,,,,PC,32'h4,`ALU_ADD);//
+	alu32 branch_(branch,,,,pc_plus4,branch_Offset,`ALU_ADD);//
+	mux4v #(32) next_Pc(nextPC,pc_plus4,branch,jump,A,control_type);//
+	
+    // DO NOT comment out or rename this module
+    // or the test bench will break
+	instruction_memory im(inst,PC[31:2]);//
+	mux2v #(32) addm_m(addr,out,A,addm);//
+	data_mem dataMemory(data_out,addr,rtData,word_we,byte_we,clock,reset);//
+	mux4v #(8) byteselect(byteout,data_out[7:0],data_out[15:8],data_out[23:16],data_out[31:24],out[1:0]);//
+	mux2v #(32) byteload(bytemem,data_out,loadbyte,byte_load);//
+	mux2v #(32) selectoutput(sltout,out,selectmuxin,slt);
+	mux2v #(32) readmemory(memread,sltout,bytemem,mem_read);//
+	mux2v #(32) adddddddm(addmmux,32'b0,rtData,addm);
+	alu32 addmalu(afteraddm,,,,memread,addmmux,`ALU_ADD);
+	mux2v #(32) luiselect(rdData,afteraddm,luiin,lui);
+	
+    mips_decode mipsdecode1(alu_op,wr_enable,rd_src,alu_src2,except,control_type,mem_read, word_we, byte_we, byte_load, lui, slt, addm,inst[31:26],inst[5:0],zero);//
+	sign_extender se1(imm32,inst[15:0]);   // // DO NOT comment out or rename this module
+    shift_left2 shift(branch_Offset,imm32);//
+    // or the test bench will break
+	mux2v #(5) rd(rdest,inst[15:11],inst[20:16],rd_src);//
+    mux2v #(32) alusrc(B,rtData,imm32,alu_src2);//
+    alu32 alu(out,overflow,zero,negative,A,B,alu_op);//
+    regfile rf (A,rtData,inst[25:21],inst[20:16],rdest,rdData,wr_enable,clock,reset);//
+    /* add other modules */
+
+endmodule // full_machine
+

@@ -1,0 +1,40 @@
+Grades for version committed on time
+	detect_parity: 10.0 / 10
+			*Passed test: detect_parity(0)
+			*Passed test: detect_parity(0) (evil)
+			*Passed test: detect_parity(1)
+			*Passed test: detect_parity(1) (evil)
+			*Passed test: detect_parity(233)
+			*Passed test: detect_parity(233) (evil)
+			*Passed test: detect_parity(0xFEEFA)
+			*Passed test: detect_parity(0xFEEFA) (evil)
+			*Passed test: detect_parity(0x7C0000DE)
+			*Passed test: detect_parity(0x7C0000DE) (evil)
+		
+	max_conts_bits_in_common: 10.0 / 10
+			*Passed test: max_conts_bits_in_common(0xbad, 0xc0de)
+			*Passed test: max_conts_bits_in_common(0xbad, 0xc0de) (evil)
+			*Passed test: max_conts_bits_in_common(0x0, 0x0)
+			*Passed test: max_conts_bits_in_common(0x0, 0x0) (evil)
+			*Passed test: max_conts_bits_in_common(0xbadc0de, 0xcafebabe)
+			*Passed test: max_conts_bits_in_common(0xbadc0de, 0xcafebabe) (evil)
+			*Passed test: max_conts_bits_in_common(10, 5)
+			*Passed test: max_conts_bits_in_common(10, 5) (evil)
+			*Passed test: max_conts_bits_in_common(237, 239)
+			*Passed test: max_conts_bits_in_common(237, 239) (evil)
+		
+	twisted_sum_array: 10.0 / 10
+			*Passed test: twisted_sum_array empty
+			*Passed test: twisted_sum_array empty (evil)
+			*Passed test: twisted_sum_array single element
+			*Passed test: twisted_sum_array single element (evil)
+			*Passed test: twisted_sum_array even list
+			*Passed test: twisted_sum_array even list (evil)
+			*Passed test: twisted_sum_array odd list
+			*Passed test: twisted_sum_array odd list (evil)
+			*Passed test: twisted_sum_array mixed list
+			*Passed test: twisted_sum_array mixed list (evil)
+		
+Total: 30.0 / 30
+
+Final Score: 30.0 / 30
